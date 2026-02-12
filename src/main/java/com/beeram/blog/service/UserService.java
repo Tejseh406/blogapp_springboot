@@ -1,5 +1,6 @@
 package com.beeram.blog.service;
 
+import com.beeram.blog.dto.LoginUserReq;
 import com.beeram.blog.dto.UserReq;
 import com.beeram.blog.model.UserEntity;
 import com.beeram.blog.repository.UserRepository;
@@ -19,5 +20,9 @@ public class UserService {
                 .bio(userReq.getBio())
                 .image(userReq.getImage())
                 .build();
+    }
+
+    public void login(LoginUserReq loginUserReq) {
+        // login implementation
     }
 }
