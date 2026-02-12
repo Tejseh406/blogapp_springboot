@@ -1,10 +1,7 @@
 package com.beeram.blog.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -12,6 +9,7 @@ import java.time.LocalDateTime;
 @Entity(name = "articles")
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Article {
@@ -27,9 +25,7 @@ public class Article {
     @Column(unique = true, nullable = false)
     private String slug;
 
-    private String subTitle;
-
-    private String Content;
+    private String content;
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
